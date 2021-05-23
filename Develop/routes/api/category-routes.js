@@ -13,6 +13,10 @@ router.get('/', (req, res) => {
   .catch((err) => res.status(500).json(err))
 });
 
+//all products
+
+//all tags
+
 router.get('/:id', (req, res) => {
   // find one category by its `id` value
   // be sure to include its associated Products
@@ -25,12 +29,20 @@ router.get('/:id', (req, res) => {
   .catch((err) => res.status(500).json(err))
 });
 
+//one product
+
+//one tag
+
 router.post('/', (req, res) => {
   // create a new category
   Category.create(req.body)
   .then((category) => res.status(200).json(category))
   .catch((err) => res.status(500).json(err))
 });
+
+//new product
+
+//new tag
 
 router.put('/:id', (req, res) => {
   // update a category by its `id` value
@@ -47,6 +59,10 @@ router.put('/:id', (req, res) => {
  .catch((err) => res.status(500).json(err))
 });
 
+//update product
+
+//update tag
+
 router.delete('/:id', (req, res) => {
   // delete a category by its `id` value
   Category.destroy({
@@ -56,5 +72,9 @@ router.delete('/:id', (req, res) => {
   }).then((deletecategory) => res.status(200).json(deletecategory))
   .catch((err) => res.status(500).json(err))
 });
+
+//delete product
+
+//delete tag
 
 module.exports = router;
